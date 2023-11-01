@@ -163,7 +163,7 @@ extension ProgressHUD {
 extension ProgressHUD {
 
 	func animate(text: String?, interaction: Bool) {
-
+        
 		removeDelayTimer()
 
 		setupWindow()
@@ -230,7 +230,9 @@ extension ProgressHUD {
 	func setupWindow() {
 		if (main == nil) {
 			main = UIApplication.shared.windows.first
-		}
+        }else{
+            print("使用老main:\(main!)")
+        }
 	}
 }
 
@@ -583,9 +585,10 @@ extension ProgressHUD {
 			toolbarHUD?.alpha = 0
 			destroyHUD()
 			alpha = 0
-            //**此处改为清除Window下次从新获取
-            main = nil
 		}
+        //**此处改为清除Window下次从新获取
+        main = nil
+        print("main:移除")
 	}
 
 	private func destroyHUD() {
