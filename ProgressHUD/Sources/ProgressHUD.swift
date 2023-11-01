@@ -584,7 +584,7 @@ extension ProgressHUD {
 			destroyHUD()
 			alpha = 0
             //**此处改为清除Window下次从新获取
-            ProgressHUD.shared.main = nil
+            main = nil
 		}
 	}
 
